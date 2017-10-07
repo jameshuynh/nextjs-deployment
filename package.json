@@ -1,5 +1,5 @@
 {
-  "name": "levoactive",
+  "name": "nextjs-deployment",
   "private": true,
   "scripts": {
     "dev": "next",
