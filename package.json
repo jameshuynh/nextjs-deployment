@@ -4,8 +4,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start",
-    "pm2-next": "next build && pm2 start app.json"
+    "start": "next start"
   },
   "dependencies": {
     "next": "^3.2.2",

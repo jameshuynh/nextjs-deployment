@@ -1,5 +1,4 @@
-/home/ubuntu/.nvm/versions/node/v8.6.0/bin
-et :application, 'nextjs-deployment' # change to your app name
+set :application, 'nextjs-deployment' # change to your app name
 set :deploy_user, 'ubuntu' # change to your server user
 set :keep_releases, 5
 
