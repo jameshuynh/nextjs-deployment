@@ -1,4 +1,5 @@
-set :application, 'nextjs-deployment' # change to your app name
+/home/ubuntu/.nvm/versions/node/v8.6.0/bin
+et :application, 'nextjs-deployment' # change to your app name
 set :deploy_user, 'ubuntu' # change to your server user
 set :keep_releases, 5
 
@@ -25,8 +26,8 @@ namespace :pm2 do
       within current_path do
         execute :npm, 'run build'
       end
-      within shared_path do
-        execute :pm2, 'start app.json'
+      within current_path do
+        execute :pm2, "start #{shared_path}/app.json"
       end
     end
   end
@@ -36,8 +37,8 @@ namespace :pm2 do
       within current_path do
         execute :npm, 'run build'
       end
-      within shared_path do
-        execute :pm2, 'reload app.json'
+      within current_path do
+        execute :pm2, "reload #{shared_path}/app.json"
       end
     end
   end
