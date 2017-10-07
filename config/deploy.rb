@@ -25,8 +25,9 @@ namespace :pm2 do
       within current_path do
         execute :npm, 'run build'
       end
-      within current_path do
-        execute :pm2, "start #{shared_path}/app.json"
+
+      within shared_path do
+        execute :pm2, 'start app.json'
       end
     end
   end
@@ -36,15 +37,16 @@ namespace :pm2 do
       within current_path do
         execute :npm, 'run build'
       end
-      within current_path do
-        execute :pm2, "reload #{shared_path}/app.json"
+
+      within shared_path do
+        execute :pm2, 'reload app.json'
       end
     end
   end
 
   task :stop do
     on roles(:app) do
-      within current_path do
+      within shared_path do
         execute :pm2, 'stop app.json'
       end
     end
