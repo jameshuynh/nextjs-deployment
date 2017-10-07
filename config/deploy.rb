@@ -57,13 +57,6 @@ namespace :deploy do
   after 'deploy:publishing', 'deploy:yarn_install'
   after 'deploy:publishing', 'deploy:restart'
 
-  task :initial do
-    on roles(:app) do
-      before 'deploy:restart', 'pm2:start'
-      invoke 'deploy'
-    end
-  end
-
   task :yarn_install do
     on roles(:app) do
       within current_path do
