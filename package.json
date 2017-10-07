@@ -1,0 +1,16 @@
+{
+  "name": "levoactive",
+  "private": true,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "pm2-next": "next build && pm2 start app.json"
+  },
+  "dependencies": {
+    "next": "^3.2.2",
+    "pm2": "^2.7.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  }
+}
